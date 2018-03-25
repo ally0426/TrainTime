@@ -1,0 +1,18 @@
+body {
+    background-image: url("https://www.lstatic.org//UserFiles/images/Arab-and-World/Other/Inside/train-austria.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    color: #000;
+    opacity: 0.8;
+}
+
+button,
+div,
+form,
+input {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
