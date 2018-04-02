@@ -51,7 +51,7 @@ $("#add-train-btn").on("click", function () {
     return false;
 });
 
-trainData.ref().on("child_added", function (childSnapshot, prevChildKey) {
+trainData.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
 
     // store info into variables
