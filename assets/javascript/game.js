@@ -14,7 +14,7 @@ firebase.initializeApp(config);
 var trainData = firebase.database();
 
 // button click event to add trains
-$("#add-train-btn").on("click", function () {
+$("#addTrainBtn").on("click", function () {
     // grab user inputs and set variables
     var trainName = $("#trainName").val().trim();
     var destination = $("#destination").val().trim();
@@ -85,7 +85,7 @@ trainData.ref().on("child_added", function (childSnapshot) {
     console.log("tArrival: ", tArrival);
 
     // add each train's data into table
-    $("#train-table > tbody").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
+    $("#trainTable").append("<tr><td>" + tName + "</td><td>" + tDestination + "</td><td>" + tFrequency + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
 
 });
 
