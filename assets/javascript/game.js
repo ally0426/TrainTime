@@ -16,14 +16,14 @@ var trainData = firebase.database();
 // button click event to add trains
 $("#add-train-btn").on("click", function () {
     // grab user inputs and set variables
-    var trainName = $("#train-name-input").val().trim();
-    var destination = $("#destination-input").val().trim();
-    var firstTrain = $("#first-train-input").val().trim();
-    var frequency = $("#frequency-input").val().trim();
+    var trainName = $("#trainName").val().trim();
+    var destination = $("#destination").val().trim();
+    var firstTrain = $("#firstTrain").val().trim();
+    var frequency = $("#frequency").val().trim();
 
     // create local temporary object to hold train data
     var newTrain = {
-        name: trainName,
+        trainName: trainName,
         destination: destination,
         firstTrain: firstTrain,
         frequency: frequency
@@ -38,14 +38,14 @@ $("#add-train-btn").on("click", function () {
     console.log(newTrain.firstTrain);
     console.log(newTrain.frequency);
 
-    // alert
-    alert("New Train Added!");
+    // console log 
+    console.log("New Train Added!");
 
     // empty the input areas
-    $("#train-name-input").val("");
-    $("#destination-input").val("");
-    $("#first-train-input").val("");
-    $("#frequency-input").val("");
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#firstTrain").val("");
+    $("#frequency").val("");
 
     // prevent trying to reload the page
     return false;
@@ -55,7 +55,7 @@ trainData.ref().on("child_added", function (childSnapshot) {
     console.log(childSnapshot.val());
 
     // store info into variables
-    var tName = childSnapshot.val().name;
+    var tName = childSnapshot.val().TrainName;
     var tDestination = childSnapshot.val().destination;
     var tFirstTrain = childSnapshot.val().firstTrain;
     var tFrequency = childSnapshot.val().frequency;
